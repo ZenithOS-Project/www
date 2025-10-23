@@ -35,7 +35,8 @@
       "@hooks/*": ["./src/hooks/*"],
       "@components/ui/*": ["./src/components/ui/*"],
       "@server/*": ["./src/server/*"],
-      "@actions/*": ["./src/server/actions/*"]
+      "@actions/*": ["./src/server/actions/*"],
+      "@context/*": ["./src/context/*"]
     }
   },
   "include": [
