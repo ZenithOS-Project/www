@@ -1,5 +1,5 @@
 import DateComponent from "./dateButton";
-import HomeButton from "./homeButton";
+import HomeButton from "./startMenu";
 import Notifications from "./notifications";
 
 export default async function TaskBar() {
