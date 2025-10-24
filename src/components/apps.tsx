@@ -1,6 +1,7 @@
 import { Calculator } from "lucide-react";
 import type { AppWindow } from "@/types";
 import CalculatorApp from "@apps/calculator";
+import { AnimatePresence } from "motion/react";
 
 export const Apps: AppWindow[] = [
   {
@@ -10,8 +11,8 @@ export const Apps: AppWindow[] = [
     content: <CalculatorApp />,
     x: 0,
     y: 0,
-    w: 5,
-    h: 8,
+    w: 7,
+    h: 7,
     active: false,
   },
 ];

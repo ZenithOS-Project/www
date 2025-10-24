@@ -3,7 +3,7 @@ import { Toggle } from "@components/ui/toggle";
 import { useApps } from "@contexts/AppsContext";
 
 export default function Windows() {
-  const { apps, toggleApp } = useApps();
+  const { apps, closingApps, startClosingApp } = useApps();
 
   return (
     <div>
@@ -12,8 +12,11 @@ export default function Windows() {
           key={app.id}
           variant="textForeground"
           pressed={app.active}
-          onPressedChange={() => toggleApp(app.id)}
-          className="hover:bg-accent/50 rounded-md"
+          onPressedChange={() => startClosingApp(app.id)}
+          className="hover:bg-accent/50 rounded-md transition-opacity"
+          style={{
+            opacity: closingApps.has(app.id) ? 0.5 : 1,
+          }}
         >
           {app.icon}
         </Toggle>

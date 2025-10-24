@@ -3,6 +3,7 @@
 import { Input } from "@components/ui/input";
 import { Button } from "@components/ui/button";
 import { useState } from "react";
+import { motion } from "motion/react";
 
 export default function CalculatorApp() {
   const [value, setValue] = useState("");
@@ -27,10 +28,16 @@ export default function CalculatorApp() {
 
     setValue(result.toString());
   };
+
   return (
-    <div className="flex h-full w-full items-center justify-center p-4">
+    <motion.div
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      transition={{ duration: 0.05 }}
+      className="flex h-full w-full items-center justify-center p-4"
+    >
       <div className="w-full max-w-sm space-y-4">
-        <Input readOnly value={value} className="text-right text-2xl" />
+        <Input readOnly value={value} className="bg-card text-right text-2xl" />
         <div className="grid grid-cols-3 gap-2">
           {["7", "8", "9", "4", "5", "6", "1", "2", "3", "0"].map((key) => (
             <Button
@@ -74,6 +81,6 @@ export default function CalculatorApp() {
           </Button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
