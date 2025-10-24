@@ -7,7 +7,7 @@ export default async function Notifications() {
   const notifications = await getAllNotifications(userId);
 
   return (
-    <NotificationPopover>
+    <NotificationPopover userId={userId}>
       <NotificationsContent notifications={notifications} userId={userId} />
     </NotificationPopover>
   );

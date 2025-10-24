@@ -1,6 +1,6 @@
+// NotificationPopover.tsx
 "use client";
-
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   Popover,
   PopoverContent,
@@ -16,8 +16,10 @@ import { Bell } from "lucide-react";
 
 export default function NotificationPopover({
   children,
+  userId,
 }: {
   children: React.ReactNode;
+  userId: string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -42,7 +44,10 @@ export default function NotificationPopover({
         </span>
       </PopoverTrigger>
       <PopoverContent align="end" className="w-auto p-0">
-        {children}
+        {React.cloneElement(children as React.ReactElement<any>, {
+          isOpen,
+          userId,
+        })}
       </PopoverContent>
     </Popover>
   );

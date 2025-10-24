@@ -10,7 +10,7 @@ import { Bell } from "lucide-react";
 
 export default function EmptyNotifications() {
   return (
-    <Empty>
+    <Empty className="min-h-80 w-80">
       <EmptyHeader>
         <EmptyMedia>
           <Bell />
