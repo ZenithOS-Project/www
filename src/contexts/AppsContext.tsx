@@ -24,20 +24,18 @@ export function AppsProvider({
     const saved = localStorage.getItem("apps-state");
     if (saved) {
       try {
-        const parsedApps = JSON.parse(saved);
+        const parsedApps = JSON.parse(saved) as Partial<AppWindow>[];
         setApps(
           initialApps.map((initialApp) => {
-            const savedApp = parsedApps.find(
-              (a: AppWindow) => a.id === initialApp.id,
-            );
+            const savedApp = parsedApps.find((a) => a.id === initialApp.id);
             return savedApp
               ? {
                   ...initialApp,
-                  active: savedApp.active,
-                  x: savedApp.x,
-                  y: savedApp.y,
-                  w: savedApp.w,
-                  h: savedApp.h,
+                  active: savedApp.active ?? initialApp.active,
+                  x: savedApp.x ?? initialApp.x,
+                  y: savedApp.y ?? initialApp.y,
+                  w: savedApp.w ?? initialApp.w,
+                  h: savedApp.h ?? initialApp.h,
                 }
               : initialApp;
           }),

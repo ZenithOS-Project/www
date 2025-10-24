@@ -6,13 +6,11 @@ import { withAuth } from "@workos-inc/authkit-nextjs";
 export async function sync() {
   const { user } = await withAuth({ ensureSignedIn: true });
 
-  console.log("Syncing user data...");
-
   if (!user) {
     throw new Error("Unauthorized");
   }
 
-  const { data, error } = await supabase
+  const { data } = await supabase
     .from("users")
     .select("*")
     .eq("workOSId", user.id)
@@ -31,7 +29,7 @@ export async function sync() {
       })
       .eq("workos_id", user.id);
   } else {
-    const { data, error } = await supabase.from("users").insert([
+    const { error } = await supabase.from("users").insert([
       {
         workOSId: user.id,
         email: user.email,

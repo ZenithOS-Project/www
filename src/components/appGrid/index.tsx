@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import GridLayout from "react-grid-layout";
+import GridLayout, { type Layout } from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
 import { Card } from "@components/ui/card";
 import { Grip, X } from "lucide-react";
@@ -18,7 +18,7 @@ export default function AppGrid({ apps = [] }: AppGridProps) {
   const [animatingApps, setAnimatingApps] = useState<Set<string>>(new Set());
   const { updateAppLayout, startClosingApp, closingApps } = useApps();
 
-  const [layout, setLayout] = useState(
+  const [layout, setLayout] = useState<Layout[]>(
     apps.map((app) => ({
       i: app.id,
       x: app.x,
@@ -96,19 +96,19 @@ export default function AppGrid({ apps = [] }: AppGridProps) {
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
 
-  const onLayoutChange = (newLayout: any) => {
+  const onLayoutChange = (newLayout: Layout[]) => {
     setLayout(newLayout);
   };
 
-  const onDragStop = (layout: any) => {
-    layout.forEach((item: any) => {
-      updateAppLayout(item.i, item.x, item.y, item.w, item.h);
+  const onDragStop = (layoutArr: Layout[]) => {
+    layoutArr.forEach((item) => {
+      updateAppLayout(item.i as string, item.x, item.y, item.w, item.h);
     });
   };
 
-  const onResizeStop = (layout: any) => {
-    layout.forEach((item: any) => {
-      updateAppLayout(item.i, item.x, item.y, item.w, item.h);
+  const onResizeStop = (layoutArr: Layout[]) => {
+    layoutArr.forEach((item) => {
+      updateAppLayout(item.i as string, item.x, item.y, item.w, item.h);
     });
   };
 

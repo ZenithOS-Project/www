@@ -18,7 +18,7 @@ export default function NotificationPopover({
   children,
   userId,
 }: {
-  children: React.ReactNode;
+  children: React.ReactElement<{ isOpen?: boolean; userId?: string }>;
   userId: string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,7 +63,7 @@ export default function NotificationPopover({
         </span>
       </PopoverTrigger>
       <PopoverContent align="end" className="w-auto p-0">
-        {React.cloneElement(children as React.ReactElement<any>, {
+        {React.cloneElement(children, {
           isOpen,
           userId,
         })}
