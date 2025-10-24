@@ -77,7 +77,7 @@ export default function StartMenuPopoverContent() {
         <Popover>
           <PopoverTrigger>
             <Avatar className="w-full hover:cursor-pointer">
-              <AvatarImage src={user.profilePictureUrl || ""} />
+              <AvatarImage src={user.profilePictureUrl ?? ""} />
               <AvatarFallback>{user.firstName?.charAt(0)}</AvatarFallback>
             </Avatar>
           </PopoverTrigger>

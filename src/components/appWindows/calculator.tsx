@@ -11,11 +11,11 @@ export default function CalculatorApp() {
   const doCalc = () => {
     const parts = value.split(/([+\-])/);
 
-    let result = parseInt(parts[0] || "0");
+    let result = parseInt(parts[0] ?? "0");
 
     for (let i = 1; i < parts.length; i += 2) {
       const operator = parts[i];
-      let number = parseInt(parts[i + 1] || "0");
+      const number = parseInt(parts[i + 1] ?? "0");
 
       if (operator === "+") {
         result += number;
@@ -73,7 +73,7 @@ export default function CalculatorApp() {
           <Button
             className="col-span-2 h-12 text-lg select-none"
             onClick={() => doCalc()}
-            disabled={!value || !parseInt(value[value.length - 1] || "0")}
+            disabled={!value || !parseInt(value[value.length - 1] ?? "0")}
           >
             =
           </Button>

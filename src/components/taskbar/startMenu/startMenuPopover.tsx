@@ -16,7 +16,7 @@ import Image from "next/image";
 import Logo from "public/logo.svg";
 import { useEffect, useState } from "react";
 
-export default function startMenuPopover({
+export default function StartMenuPopover({
   children,
 }: {
   children: React.ReactNode;

@@ -12,7 +12,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="max-h-screen min-h-screen max-w-screen min-w-screen overflow-hidden bg-[url('public/defaultBackground.jpg')] bg-cover bg-center">
+      <body className="max-h-screen min-h-screen max-w-screen min-w-screen overflow-hidden bg-[url('/defaultBackground.jpg')] bg-cover bg-center">
         <AuthKitProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}
