@@ -13,7 +13,7 @@ This projects goal is to improve my personal skills in webdevelopment. Over the 
 - [ ] **File Explorer** - Browse and manage files/folders with a tree view interface
 - [ ] **Settings App** - Customize theme, colors, window behavior, and system preferences
 - [ ] **Text Editor** - Simple note-taking and code editing with syntax highlighting
-- [x] **Clock/Calendar** - Display current time, calendar view, and reminders
+- [x] **Clock/Calendar** - Display current time and calendar view
 - [ ] **System Tray** - Enhanced notifications, system status indicators, and quick settings
 
 ### UI/UX Improvements
