@@ -37,7 +37,9 @@
       "@server/*": ["./src/server/*"],
       "@actions/*": ["./src/server/actions/*"],
       "@fetchers/*": ["./src/server/fetchers/*"],
-      "@contexts/*": ["./src/contexts/*"]
+      "@contexts/*": ["./src/contexts/*"],
+      "@types/*": ["./src/types/*"],
+      "@apps/*": ["./src/components/appWindows/*"]
     }
   },
   "include": [
