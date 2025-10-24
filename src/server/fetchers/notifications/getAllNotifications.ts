@@ -1,3 +1,4 @@
+"use server";
 import supabase from "@server/supabase";
 
 export async function getAllNotifications(userId: string) {

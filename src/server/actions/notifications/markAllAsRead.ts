@@ -1,19 +1,18 @@
 "use server";
+
 import supabase from "@server/supabase";
 import { revalidatePath } from "next/cache";
 
-export async function markNotificationAsRead(
+export async function markAllNotificationsAsRead(
   prevState: unknown,
   formData: FormData,
 ) {
-  const notificationId = formData.get("notificationId") as string;
-
-  if (!notificationId) return { success: false };
-
+  const userId = formData.get("userId") as string;
   const { error } = await supabase
     .from("notifications")
     .update({ isRead: true, readAt: new Date() })
-    .eq("id", notificationId);
+    .eq("userId", userId)
+    .eq("isRead", false);
 
   if (error) {
     return { success: false, error };
@@ -21,5 +20,5 @@ export async function markNotificationAsRead(
 
   revalidatePath("/");
 
-  return { success: true, notificationId };
+  return { success: true };
 }
