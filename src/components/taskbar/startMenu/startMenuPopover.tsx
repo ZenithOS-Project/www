@@ -16,7 +16,11 @@ import Image from "next/image";
 import Logo from "public/logo.svg";
 import { useEffect, useState } from "react";
 
-export default function startMenuPopover() {
+export default function startMenuPopover({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const [open, setOpen] = useState(false);
 
   const handleKeyDown = (e: KeyboardEvent) => {
@@ -60,9 +64,7 @@ export default function startMenuPopover() {
           </Toggle>
         </span>
       </PopoverTrigger>
-      <PopoverContent>
-        <p>Popover Content</p>
-      </PopoverContent>
+      <PopoverContent>{children}</PopoverContent>
     </Popover>
   );
 }

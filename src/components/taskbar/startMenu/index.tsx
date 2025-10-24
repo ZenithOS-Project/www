@@ -1,4 +1,10 @@
 import StartMenuPopover from "./startMenuPopover";
+import { StartMenuPopoverContent } from "./startMenuPopoverContent";
+
 export default async function startMenu() {
-  return <StartMenuPopover></StartMenuPopover>;
+  return (
+    <StartMenuPopover>
+      <StartMenuPopoverContent />
+    </StartMenuPopover>
+  );
 }

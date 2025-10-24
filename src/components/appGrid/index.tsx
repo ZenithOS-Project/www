@@ -142,6 +142,7 @@ export default function AppGrid({ apps = [] }: AppGridProps) {
             return (
               <div
                 key={app.id}
+                className=""
                 style={{
                   opacity: isClosing ? 0 : isAnimating ? 1 : isOpening ? 0 : 1,
                   transform: isClosing
