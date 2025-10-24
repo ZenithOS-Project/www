@@ -13,7 +13,7 @@ This projects goal is to improve my personal skills in webdevelopment. Over the 
 - [ ] **File Explorer** - Browse and manage files/folders with a tree view interface
 - [ ] **Settings App** - Customize theme, colors, window behavior, and system preferences
 - [ ] **Text Editor** - Simple note-taking and code editing with syntax highlighting
-- [x] **Clock/Calendar** - Display current time, calendar view, and reminders
+- [x] **Clock/Calendar** - Display current time and calendar view
 - [ ] **System Tray** - Enhanced notifications, system status indicators, and quick settings
 
 ### UI/UX Improvements
@@ -30,12 +30,10 @@ This projects goal is to improve my personal skills in webdevelopment. Over the 
 - [ ] **App Store** - Download and install new apps from a curated list
 - [ ] **Plugin System** - Create and load custom apps dynamically
 - [ ] **Web Storage Integration** - Cloud sync for app data and settings
-- [ ] **Screenshot Tool** - Capture and annotate portions of the screen
 
 ### Applications to Build
 
 - [ ] **Paint/Drawing App** - Simple canvas-based drawing tool
-- [ ] **Web Browser Tab** - Embedded iframe browser for specific websites
 - [ ] **Terminal/Console** - Command-like interface for system commands
 - [ ] **Todo/Task Manager** - Create, organize, and track tasks
 - [ ] **Weather Widget** - Display weather information
