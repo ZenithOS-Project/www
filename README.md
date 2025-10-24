@@ -30,12 +30,10 @@ This projects goal is to improve my personal skills in webdevelopment. Over the 
 - [ ] **App Store** - Download and install new apps from a curated list
 - [ ] **Plugin System** - Create and load custom apps dynamically
 - [ ] **Web Storage Integration** - Cloud sync for app data and settings
-- [ ] **Screenshot Tool** - Capture and annotate portions of the screen
 
 ### Applications to Build
 
 - [ ] **Paint/Drawing App** - Simple canvas-based drawing tool
-- [ ] **Web Browser Tab** - Embedded iframe browser for specific websites
 - [ ] **Terminal/Console** - Command-like interface for system commands
 - [ ] **Todo/Task Manager** - Create, organize, and track tasks
 - [ ] **Weather Widget** - Display weather information
