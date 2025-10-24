@@ -16,7 +16,7 @@ export default async function RootLayout({
         <AuthKitProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}
-            <Toaster position="bottom-right" />
+            <Toaster position="top-right" />
           </ThemeProvider>
         </AuthKitProvider>
       </body>
