@@ -27,6 +27,7 @@ export async function sync() {
         lastName: user.lastName,
         avatar: user.profilePictureUrl,
         updatedAt: new Date(),
+        lastSeen: new Date(),
       })
       .eq("workos_id", user.id);
   } else {
