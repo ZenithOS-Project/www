@@ -1,0 +1,29 @@
+import type { ReactNode } from "react";
+
+export interface AppWindow {
+  id: string;
+  title: string;
+  icon?: ReactNode;
+  content: ReactNode;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  active: boolean;
+}
+
+export interface AppGridProps {
+  apps?: AppWindow[];
+}
+
+export interface AppsContextType {
+  apps: AppWindow[];
+  toggleApp: (id: string) => void;
+  updateAppLayout: (
+    id: string,
+    x: number,
+    y: number,
+    w: number,
+    h: number,
+  ) => void;
+}
