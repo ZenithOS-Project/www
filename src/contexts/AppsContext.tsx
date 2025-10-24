@@ -1,10 +1,18 @@
+// contexts/AppsContext.tsx
 "use client";
 
 import { createContext, useContext, useState, useEffect } from "react";
 import type { ReactNode } from "react";
 import type { AppWindow, AppsContextType } from "@/types";
 
-const AppsContext = createContext<AppsContextType | undefined>(undefined);
+interface AppsContextTypeWithClosing extends AppsContextType {
+  closingApps: Set<string>;
+  startClosingApp: (id: string) => void;
+}
+
+const AppsContext = createContext<AppsContextTypeWithClosing | undefined>(
+  undefined,
+);
 
 export function AppsProvider({
   children,
@@ -15,6 +23,7 @@ export function AppsProvider({
 }) {
   const [mounted, setMounted] = useState(false);
   const [apps, setApps] = useState<AppWindow[]>(initialApps);
+  const [closingApps, setClosingApps] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     setMounted(true);
@@ -68,6 +77,18 @@ export function AppsProvider({
     );
   };
 
+  const startClosingApp = (id: string) => {
+    setClosingApps((prev) => new Set(prev).add(id));
+    setTimeout(() => {
+      toggleApp(id);
+      setClosingApps((prev) => {
+        const next = new Set(prev);
+        next.delete(id);
+        return next;
+      });
+    }, 200);
+  };
+
   const updateAppLayout = (
     id: string,
     x: number,
@@ -81,7 +102,9 @@ export function AppsProvider({
   };
 
   return (
-    <AppsContext.Provider value={{ apps, toggleApp, updateAppLayout }}>
+    <AppsContext.Provider
+      value={{ apps, toggleApp, updateAppLayout, closingApps, startClosingApp }}
+    >
       {children}
     </AppsContext.Provider>
   );
