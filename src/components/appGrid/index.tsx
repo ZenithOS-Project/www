@@ -3,25 +3,10 @@
 import { useState, useRef, useEffect } from "react";
 import GridLayout from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
-import { Card } from "@components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Grip } from "lucide-react";
-import { useApps } from "@contexts/AppsContext";
-
-interface AppWindow {
-  id: string;
-  title: string;
-  icon?: React.ReactNode;
-  content: React.ReactNode;
-  x: number;
-  y: number;
-  w: number;
-  h: number;
-  active: boolean;
-}
-
-interface AppGridProps {
-  apps?: AppWindow[];
-}
+import { useApps } from "@/contexts/AppsContext";
+import type { AppGridProps } from "@/types";
 
 export default function AppGrid({ apps = [] }: AppGridProps) {
   const containerRef = useRef<HTMLDivElement>(null);

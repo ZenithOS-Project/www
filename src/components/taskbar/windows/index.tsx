@@ -10,6 +10,7 @@ export default function Windows() {
       {apps.map((app) => (
         <Toggle
           key={app.id}
+          variant="textForeground"
           pressed={app.active}
           onPressedChange={() => toggleApp(app.id)}
           className="hover:bg-accent/50 rounded-md"

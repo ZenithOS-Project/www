@@ -2,30 +2,7 @@
 
 import { createContext, useContext, useState, useEffect } from "react";
 import type { ReactNode } from "react";
-
-interface AppWindow {
-  id: string;
-  title: string;
-  icon?: React.ReactNode;
-  content: React.ReactNode;
-  x: number;
-  y: number;
-  w: number;
-  h: number;
-  active: boolean;
-}
-
-interface AppsContextType {
-  apps: AppWindow[];
-  toggleApp: (id: string) => void;
-  updateAppLayout: (
-    id: string,
-    x: number,
-    y: number,
-    w: number,
-    h: number,
-  ) => void;
-}
+import type { AppWindow, AppsContextType } from "@/types";
 
 const AppsContext = createContext<AppsContextType | undefined>(undefined);
 
