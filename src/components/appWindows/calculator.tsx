@@ -10,12 +10,10 @@ export default function CalculatorApp() {
 
   const doCalc = () => {
     const parts = value.split(/([+\-])/);
-    console.log(parts);
 
     let result = parseInt(parts[0] || "0");
 
     for (let i = 1; i < parts.length; i += 2) {
-      console.log(parts[i]);
       const operator = parts[i];
       let number = parseInt(parts[i + 1] || "0");
 
