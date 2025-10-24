@@ -36,7 +36,8 @@
       "@components/ui/*": ["./src/components/ui/*"],
       "@server/*": ["./src/server/*"],
       "@actions/*": ["./src/server/actions/*"],
-      "@context/*": ["./src/context/*"]
+      "@fetchers/*": ["./src/server/fetchers/*"],
+      "@contexts/*": ["./src/contexts/*"]
     }
   },
   "include": [
