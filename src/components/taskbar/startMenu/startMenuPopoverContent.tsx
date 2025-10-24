@@ -22,6 +22,7 @@ import {
   AlertDialogContent,
   AlertDialogHeader,
   AlertDialogTrigger,
+  AlertDialogCancel,
 } from "@/components/ui/alert-dialog";
 
 export default function StartMenuPopoverContent() {
@@ -33,13 +34,13 @@ export default function StartMenuPopoverContent() {
 
   return (
     <div className="flex flex-row">
-      <div className="flex h-80 w-10 flex-col items-center justify-end">
+      <div className="flex h-80 flex-col items-center justify-end gap-2 p-2">
         <AlertDialog>
           <AlertDialogTrigger asChild>
             <span>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button variant="ghost" className="mb-2 p-0">
+                  <Button variant="ghost" className="p-0">
                     <Power />
                   </Button>
                 </TooltipTrigger>
@@ -54,8 +55,11 @@ export default function StartMenuPopoverContent() {
               </AlertDialogTitle>
             </AlertDialogHeader>
             <AlertDialogFooter>
+              <AlertDialogCancel asChild>
+                <Button variant="ghost">Cancel</Button>
+              </AlertDialogCancel>
               <form action={logout}>
-                <Button type="submit" variant="destructive">
+                <Button type="submit" variant="outline">
                   Yes, Sign out
                 </Button>
               </form>
@@ -64,7 +68,7 @@ export default function StartMenuPopoverContent() {
         </AlertDialog>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="ghost" className="mb-2 p-0">
+            <Button variant="ghost" className="p-0">
               <Settings />
             </Button>
           </TooltipTrigger>
@@ -72,7 +76,7 @@ export default function StartMenuPopoverContent() {
         </Tooltip>
         <Popover>
           <PopoverTrigger>
-            <Avatar className="hover:cursor-pointer">
+            <Avatar className="w-full hover:cursor-pointer">
               <AvatarImage src={user.profilePictureUrl || ""} />
               <AvatarFallback>{user.firstName?.charAt(0)}</AvatarFallback>
             </Avatar>
@@ -84,7 +88,7 @@ export default function StartMenuPopoverContent() {
           </PopoverContent>
         </Popover>
       </div>
-      <Separator orientation="vertical" className="mx-4 min-h-80" />
+      <Separator orientation="vertical" className="min-h-80" />
       {/* <div>test</div> */}
     </div>
   );

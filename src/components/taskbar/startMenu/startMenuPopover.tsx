@@ -64,7 +64,7 @@ export default function startMenuPopover({
           </Toggle>
         </span>
       </PopoverTrigger>
-      <PopoverContent>{children}</PopoverContent>
+      <PopoverContent className="p-0">{children}</PopoverContent>
     </Popover>
   );
 }
