@@ -222,3 +222,8 @@ body {
   background-color: var(--muted) !important;
   border-radius: var(--radius);
 }
+
+.react-grid-item > .react-resizable-handle.react-resizable-handle-se::after {
+  border-color: var(--muted-foreground);
+  border-radius: calc(var(--radius) / 2);
+}
