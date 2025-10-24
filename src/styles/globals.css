@@ -87,7 +87,7 @@
   --secondary: oklch(0.294 0.013 272.9312);
   --secondary-foreground: oklch(0.9551 0 0);
   --muted: oklch(0.294 0.013 272.9312);
-  --muted-foreground: oklch(0.7058 0 0);
+  --muted-foreground: oklch(60.662% 0.00007 271.152);
   --accent: oklch(0.2795 0.0368 260.031);
   --accent-foreground: oklch(0.7857 0.1153 246.6596);
   --destructive: oklch(0.7106 0.1661 22.2162);
@@ -216,4 +216,9 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.react-grid-placeholder {
+  background-color: var(--muted) !important;
+  border-radius: var(--radius);
 }
