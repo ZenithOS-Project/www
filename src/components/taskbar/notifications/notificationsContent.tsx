@@ -1,5 +1,4 @@
 "use client";
-import type { Notification } from "@/types";
 import EmptyNotifications from "./empty";
 import { ScrollArea } from "@components/ui/scroll-area";
 import {
@@ -24,6 +23,7 @@ import { toast } from "sonner";
 import { getAllNotifications } from "@fetchers/notifications/getAllNotifications";
 import { markAllNotificationsAsRead } from "@server/actions/notifications/markAllAsRead";
 import { Kbd, KbdGroup } from "@components/ui/kbd";
+import type { Notification } from "@/types";
 
 export default function NotificationsContent({
   notifications: initialNotifications,

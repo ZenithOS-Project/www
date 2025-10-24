@@ -1,9 +1,7 @@
 "use server";
 import supabase from "@server/supabase";
 
-export async function getAllNotifications(
-  userId: string,
-): Promise<Notification[]> {
+export async function getAllNotifications(userId: string) {
   const { data, error } = await supabase
     .from("notifications")
     .select()
@@ -13,5 +11,5 @@ export async function getAllNotifications(
     throw new Error(error.message);
   }
 
-  return data as Notification[];
+  return data;
 }
