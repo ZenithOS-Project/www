@@ -1,5 +1,5 @@
 "use client";
-import type { Notification } from "@types/notifications";
+import type { Notification } from "@/types";
 import EmptyNotifications from "./empty";
 import { ScrollArea } from "@components/ui/scroll-area";
 import {
