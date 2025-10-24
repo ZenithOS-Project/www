@@ -27,3 +27,8 @@ export interface AppsContextType {
     h: number,
   ) => void;
 }
+
+export interface AppsContextTypeWithClosing extends AppsContextType {
+  closingApps: Set<string>;
+  startClosingApp: (id: string) => void;
+}

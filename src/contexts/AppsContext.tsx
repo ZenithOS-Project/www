@@ -2,12 +2,7 @@
 
 import { createContext, useContext, useState, useEffect } from "react";
 import type { ReactNode } from "react";
-import type { AppWindow, AppsContextType } from "@/types";
-
-interface AppsContextTypeWithClosing extends AppsContextType {
-  closingApps: Set<string>;
-  startClosingApp: (id: string) => void;
-}
+import type { AppWindow, AppsContextTypeWithClosing } from "@/types";
 
 const AppsContext = createContext<AppsContextTypeWithClosing | undefined>(
   undefined,
