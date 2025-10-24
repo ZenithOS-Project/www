@@ -5,8 +5,13 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
-import { Toggle } from "@/components/ui/toggle";
+} from "@components/ui/popover";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@components/ui/tooltip";
+import { Toggle } from "@components/ui/toggle";
 import { Bell } from "lucide-react";
 
 export default function NotificationPopover({
@@ -20,13 +25,20 @@ export default function NotificationPopover({
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
         <span>
-          <Toggle
-            variant="textForeground"
-            pressed={isOpen}
-            onPressedChange={setIsOpen}
-          >
-            <Bell />
-          </Toggle>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span>
+                <Toggle
+                  variant="textForeground"
+                  pressed={isOpen}
+                  onPressedChange={setIsOpen}
+                >
+                  <Bell />
+                </Toggle>
+              </span>
+            </TooltipTrigger>
+            <TooltipContent>Notifications</TooltipContent>
+          </Tooltip>
         </span>
       </PopoverTrigger>
       <PopoverContent align="end" className="w-auto p-0">

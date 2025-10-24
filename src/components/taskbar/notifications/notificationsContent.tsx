@@ -1,6 +1,7 @@
-import type { Notification } from "@/types/notifications";
+"use client";
+import type { Notification } from "@types/notifications";
 import EmptyNotifications from "./empty";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { ScrollArea } from "@components/ui/scroll-area";
 import {
   BookOpenCheck,
   Info,
@@ -8,18 +9,35 @@ import {
   ShieldCheck,
   ShieldX,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@components/ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@components/ui/tooltip";
+import { markNotificationAsRead } from "@actions/notifications/markAsRead";
+import { useActionState, useEffect } from "react";
+import { Spinner } from "@components/ui/spinner";
+import { toast } from "sonner";
 
 export default function NotificationsContent({
   notifications,
+  userId,
 }: {
   notifications: Notification[];
+  userId: string;
 }) {
+  const [state, action, isPending] = useActionState(
+    markNotificationAsRead,
+    null,
+  );
+
+  useEffect(() => {
+    if (state?.success) {
+      toast.success("Notification marked as read");
+    }
+  }, [state]);
+
   if (notifications.length === 0) {
     return <EmptyNotifications />;
   }
@@ -55,16 +73,23 @@ export default function NotificationsContent({
                 </div>
               </div>
               {notification.isRead ? null : (
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="ghost" className="ml-auto">
-                      <BookOpenCheck />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Mark As Read</p>
-                  </TooltipContent>
-                </Tooltip>
+                <form className="ml-auto" action={action}>
+                  <input
+                    type="hidden"
+                    name="notificationId"
+                    value={notification.id}
+                  />
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button variant="ghost" disabled={isPending}>
+                        {isPending ? <Spinner /> : <BookOpenCheck />}
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Mark As Read</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </form>
               )}
             </div>
           ))}

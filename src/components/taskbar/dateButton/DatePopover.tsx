@@ -6,7 +6,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@components/ui/popover";
-import { Toggle } from "@/components/ui/toggle";
+import { Toggle } from "@components/ui/toggle";
 
 export function DatePopover({
   trigger,
@@ -30,7 +30,7 @@ export function DatePopover({
           </Toggle>
         </span>
       </PopoverTrigger>
-      <PopoverContent align="end" className="w-auto p-0">
+      <PopoverContent align="end" className="w-auto p-0 select-none">
         {children}
       </PopoverContent>
     </Popover>

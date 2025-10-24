@@ -4,8 +4,8 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
-import { Toggle } from "@/components/ui/toggle";
+} from "@components/ui/popover";
+import { Toggle } from "@components/ui/toggle";
 import Image from "next/image";
 import Logo from "public/logo.svg";
 import { useState } from "react";

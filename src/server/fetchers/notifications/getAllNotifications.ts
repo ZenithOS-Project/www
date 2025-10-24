@@ -6,7 +6,6 @@ export async function getAllNotifications(userId: string) {
     .select()
     .eq("userId", userId);
 
-  console.log("Fetched notifications:", data);
   if (error) {
     throw new Error(error.message);
   }
