@@ -1,5 +1,11 @@
 "use client";
 
+import { Kbd, KbdGroup } from "@components/ui/kbd";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@components/ui/tooltip";
 import {
   Popover,
   PopoverContent,
@@ -8,10 +14,25 @@ import {
 import { Toggle } from "@components/ui/toggle";
 import Image from "next/image";
 import Logo from "public/logo.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function startMenuPopover() {
   const [open, setOpen] = useState(false);
+
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.shiftKey && e.key.toLowerCase() === "s") {
+      e.preventDefault();
+      setOpen((prev) => !prev);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
@@ -21,12 +42,26 @@ export default function startMenuPopover() {
             onPressedChange={setOpen}
             variant="textForeground"
           >
-            <Image src={Logo.src} alt="Favicon" width={20} height={20} />
+            <span>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <span>
+                    <Image src={Logo} alt="Start Menu" width={16} height={16} />
+                  </span>
+                </TooltipTrigger>
+                <TooltipContent className="flex gap-2">
+                  Start Menu
+                  <KbdGroup>
+                    <Kbd>Shift</Kbd> + <Kbd>S</Kbd>
+                  </KbdGroup>
+                </TooltipContent>
+              </Tooltip>
+            </span>
           </Toggle>
         </span>
       </PopoverTrigger>
       <PopoverContent>
-        <p> Popover Content</p>
+        <p>Popover Content</p>
       </PopoverContent>
     </Popover>
   );

@@ -12,6 +12,7 @@ import {
 } from "@components/ui/tooltip";
 import { Toggle } from "@components/ui/toggle";
 import { Bell } from "lucide-react";
+import { Kbd, KbdGroup } from "@components/ui/kbd";
 
 export default function NotificationPopover({
   children,
@@ -21,6 +22,20 @@ export default function NotificationPopover({
   userId: string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.shiftKey && e.key.toLowerCase() === "n") {
+      e.preventDefault();
+      setIsOpen((prev) => !prev);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
@@ -38,7 +53,12 @@ export default function NotificationPopover({
                 </Toggle>
               </span>
             </TooltipTrigger>
-            <TooltipContent>Notifications</TooltipContent>
+            <TooltipContent className="flex gap-2">
+              Notifications
+              <KbdGroup>
+                <Kbd>Shift</Kbd> + <Kbd>N</Kbd>
+              </KbdGroup>
+            </TooltipContent>
           </Tooltip>
         </span>
       </PopoverTrigger>

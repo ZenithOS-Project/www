@@ -23,6 +23,7 @@ import { Spinner } from "@components/ui/spinner";
 import { toast } from "sonner";
 import { getAllNotifications } from "@fetchers/notifications/getAllNotifications";
 import { markAllNotificationsAsRead } from "@server/actions/notifications/markAllAsRead";
+import { Kbd, KbdGroup } from "@components/ui/kbd";
 
 export default function NotificationsContent({
   notifications: initialNotifications,
@@ -79,6 +80,31 @@ export default function NotificationsContent({
     return a.isRead ? 1 : -1;
   });
 
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.shiftKey && e.key.toLowerCase() === "r") {
+      e.preventDefault();
+      startTransition(async () => {
+        const fresh = await getAllNotifications(userId);
+        setNotifications(fresh);
+        toast.success("Notifications refreshed");
+      });
+    } else if (e.shiftKey && e.key.toLowerCase() === "a") {
+      e.preventDefault();
+      startTransition(async () => {
+        const fresh = await getAllNotifications(userId);
+        setNotifications(fresh);
+        toast.success("All notifications marked as read");
+      });
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   return (
     <div className="flex flex-col gap-4 p-4">
       <h2 className="flex items-center justify-between text-lg font-semibold">
@@ -101,8 +127,11 @@ export default function NotificationsContent({
                 {refreshPending ? <Spinner /> : <RotateCcw />}
               </Button>
             </TooltipTrigger>
-            <TooltipContent>
-              <p>Refresh Notifications</p>
+            <TooltipContent className="flex gap-2">
+              Refresh Notifications
+              <KbdGroup>
+                <Kbd>Shift</Kbd> + <Kbd>R</Kbd>
+              </KbdGroup>
             </TooltipContent>
           </Tooltip>
           <form action={markAllAction}>
@@ -113,8 +142,11 @@ export default function NotificationsContent({
                   <MailCheck />
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>
-                <p>Mark All As Read</p>
+              <TooltipContent className="flex gap-2">
+                Mark All As Read
+                <KbdGroup>
+                  <Kbd>Shift</Kbd> + <Kbd>A</Kbd>
+                </KbdGroup>
               </TooltipContent>
             </Tooltip>
           </form>

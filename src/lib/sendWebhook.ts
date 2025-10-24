@@ -19,6 +19,4 @@ export async function sendWebhook() {
     console.error("Error sending notification via webhook:", error);
     return;
   }
-
-  console.log("Notification sent via webhook:", data);
 }

@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import GridLayout from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
-import { Card } from "@/components/ui/card";
+import { Card } from "@components/ui/card";
 import { Grip, X } from "lucide-react";
 import { useApps } from "@/contexts/AppsContext";
 import type { AppGridProps, AppWindow } from "@/types";
