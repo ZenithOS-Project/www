@@ -6,7 +6,6 @@ import { withAuth } from "@workos-inc/authkit-nextjs";
 
 export default async function Home() {
   const { user } = await withAuth({ ensureSignedIn: true });
-
   return (
     <AppsProvider initialApps={Apps}>
       <main>
