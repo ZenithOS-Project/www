@@ -22,7 +22,7 @@ This projects goal is to improve my personal skills in webdevelopment. Over the 
 - [ ] **Customizable Taskbar** - Reorder, pin/unpin apps, taskbar positioning options
 - [ ] **Window Snapshots** - Snap windows to edges (half-screen, corners, etc.)
 - [ ] **Context Menus** - Right-click menus for desktop and windows
-- [ ] **Keyboard Shortcuts** - Common shortcuts (Alt+Tab, Win key, etc.)
+- [x] **Keyboard Shortcuts** - Common shortcuts (Alt+Tab, Win key, etc.)
 
 ### Advanced Features
 
