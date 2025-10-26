@@ -24,6 +24,7 @@ import {
   AlertDialogTrigger,
   AlertDialogCancel,
 } from "@/components/ui/alert-dialog";
+import { openApp } from "@/lib/openApp";
 
 export default function StartMenuPopoverContent() {
   const { user } = useAuth();
@@ -68,7 +69,13 @@ export default function StartMenuPopoverContent() {
         </AlertDialog>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="ghost" className="p-0">
+            <Button
+              variant="ghost"
+              className="p-0"
+              onClick={() => {
+                openApp("settings");
+              }}
+            >
               <Settings />
             </Button>
           </TooltipTrigger>
