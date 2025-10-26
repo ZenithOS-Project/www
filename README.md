@@ -18,10 +18,10 @@ This projects goal is to improve my personal skills in webdevelopment. Over the 
 
 ### UI/UX Improvements
 
-- [ ] **Dark/Light Mode Toggle** - Persistent theme preference with smooth transitions
+- [x] **Dark/Light Mode Toggle** - Persistent theme preference with smooth transitions
 - [ ] **Customizable Taskbar** - Reorder, pin/unpin apps, taskbar positioning options
 - [ ] **Window Snapshots** - Snap windows to edges (half-screen, corners, etc.)
-- [-] **Context Menus** - Right-click menus for desktop and windows
+- [x] **Context Menus** - Right-click menus for desktop and windows
 - [x] **Keyboard Shortcuts** - Common shortcuts (Alt+Tab, Win key, etc.)
 
 ### Advanced Features
