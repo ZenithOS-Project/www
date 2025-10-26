@@ -11,7 +11,7 @@ This projects goal is to improve my personal skills in webdevelopment. Over the 
 ### Core Features
 
 - [ ] **File Explorer** - Browse and manage files/folders with a tree view interface
-- [ ] **Settings App** - Customize theme, colors, window behavior, and system preferences
+- [-] **Settings App** - Customize theme, colors, window behavior, and system preferences
 - [ ] **Text Editor** - Simple note-taking and code editing with syntax highlighting
 - [x] **Clock/Calendar** - Display current time and calendar view
 - [ ] **System Tray** - Enhanced notifications, system status indicators, and quick settings
@@ -21,7 +21,7 @@ This projects goal is to improve my personal skills in webdevelopment. Over the 
 - [ ] **Dark/Light Mode Toggle** - Persistent theme preference with smooth transitions
 - [ ] **Customizable Taskbar** - Reorder, pin/unpin apps, taskbar positioning options
 - [ ] **Window Snapshots** - Snap windows to edges (half-screen, corners, etc.)
-- [ ] **Context Menus** - Right-click menus for desktop and windows
+- [-] **Context Menus** - Right-click menus for desktop and windows
 - [x] **Keyboard Shortcuts** - Common shortcuts (Alt+Tab, Win key, etc.)
 
 ### Advanced Features

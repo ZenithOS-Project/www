@@ -4,7 +4,8 @@ export interface AppWindow {
   id: string;
   title: string;
   icon?: ReactNode;
-  content: ReactNode;
+  component?: React.ComponentType<any>;
+  content?: ReactNode;
   x: number;
   y: number;
   w: number;
