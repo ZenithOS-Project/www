@@ -1,6 +1,5 @@
-import { Copy, RefreshCcw, Clipboard } from "lucide-react";
-import Calculator from "./appWindows/calculator";
-import { Apps } from "./apps";
+import { Copy, RefreshCcw, Clipboard, Info } from "lucide-react";
+import { openApp } from "@/lib/openApp";
 
 export const contextMenuItems = {
   refresh: {
@@ -19,11 +18,9 @@ export const contextMenuItems = {
   },
   info: {
     label: "Get System Info",
-    icon: <Clipboard />,
+    icon: <Info />,
     function: () => {
-      window.dispatchEvent(
-        new CustomEvent("open-app", { detail: "calculator" }),
-      );
+      openApp("settings");
     },
   },
 };

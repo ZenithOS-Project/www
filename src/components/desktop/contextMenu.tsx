@@ -1,4 +1,4 @@
-import { contextMenuItems } from "../contextMenu";
+import { contextMenuItems } from "../constants/contextMenu";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
