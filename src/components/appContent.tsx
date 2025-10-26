@@ -1,6 +1,6 @@
 "use client";
 
-import AppGrid from "@components/appGrid";
+import AppGrid from "@/components/desktop";
 import { useApps } from "@contexts/AppsContext";
 
 export default function AppContent() {

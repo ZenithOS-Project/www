@@ -64,7 +64,13 @@ export default function StartMenuPopover({
           </Toggle>
         </span>
       </PopoverTrigger>
-      <PopoverContent className="p-0">{children}</PopoverContent>
+      <PopoverContent
+        className="p-0"
+        onCloseAutoFocus={(e) => e.preventDefault()}
+        onOpenAutoFocus={(e) => e.preventDefault()}
+      >
+        {children}
+      </PopoverContent>
     </Popover>
   );
 }
