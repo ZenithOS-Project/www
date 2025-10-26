@@ -17,6 +17,7 @@ import { Toggle } from "@components/ui/toggle";
 import Image from "next/image";
 import LogoDark from "public/LogoDark.svg";
 import LogoLight from "public/LogoLight.svg";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function StartMenuPopover({
   children,
@@ -24,6 +25,7 @@ export default function StartMenuPopover({
   children: React.ReactNode;
 }) {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
 
   const handleKeyDown = (e: KeyboardEvent) => {
@@ -34,11 +36,16 @@ export default function StartMenuPopover({
   };
 
   useEffect(() => {
+    setMounted(true);
     window.addEventListener("keydown", handleKeyDown);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
+
+  if (!mounted) {
+    return <Skeleton className="m-2 h-4 w-4 rounded-md" />;
+  }
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
