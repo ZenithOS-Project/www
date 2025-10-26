@@ -134,22 +134,26 @@ export default function NotificationsContent({
               </KbdGroup>
             </TooltipContent>
           </Tooltip>
-          <form action={markAllAction}>
-            <input type="hidden" name="userId" value={userId} />
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button variant="ghost" size="sm" className="" type="submit">
-                  <MailCheck />
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent className="flex gap-2">
-                Mark All As Read
-                <KbdGroup>
-                  <Kbd>Shift</Kbd> + <Kbd>A</Kbd>
-                </KbdGroup>
-              </TooltipContent>
-            </Tooltip>
-          </form>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => {
+                  startTransition(() => markAllAction(new FormData()));
+                }}
+              >
+                <MailCheck />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent className="flex gap-2">
+              Mark All As Read
+              <KbdGroup>
+                <Kbd>Shift</Kbd> + <Kbd>A</Kbd>
+              </KbdGroup>
+            </TooltipContent>
+          </Tooltip>
+          <button type="button" tabIndex={0} style={{ display: "none" }} />
         </div>
       </h2>
       {notifications.length > 0 ? (

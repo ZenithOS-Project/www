@@ -62,7 +62,12 @@ export default function NotificationPopover({
           </Tooltip>
         </span>
       </PopoverTrigger>
-      <PopoverContent align="end" className="w-auto p-0">
+      <PopoverContent
+        align="end"
+        className="w-auto p-0"
+        onCloseAutoFocus={(e) => e.preventDefault()}
+        onOpenAutoFocus={(e) => e.preventDefault()}
+      >
         {React.cloneElement(children, {
           isOpen,
           userId,
