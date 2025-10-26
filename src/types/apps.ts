@@ -10,6 +10,7 @@ export interface AppWindow {
   w: number;
   h: number;
   active: boolean;
+  showInTaskbar: boolean;
 }
 
 export interface AppGridProps {

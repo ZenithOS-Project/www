@@ -5,3 +5,4 @@ export type {
   AppsContextTypeWithClosing,
 } from "./apps";
 export type { Notification } from "./notifications";
+export type { User } from "./user";
