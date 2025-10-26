@@ -21,7 +21,7 @@ export default function WindowCard({
   initialProps?: Record<string, any>;
 }) {
   return (
-    <Card className="bg-card/80 h-full w-full overflow-hidden backdrop-blur-md">
+    <Card className="bg-card/60 dark:bg-card/80 h-full w-full overflow-hidden backdrop-blur-md">
       <div className="drag-handle bg-muted/50 flex h-12 cursor-move items-center justify-between border-b p-3">
         <div className="flex items-center gap-2">
           <Grip className="text-muted-foreground h-4 w-4" />

@@ -1,5 +1,7 @@
 "use client";
 
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import { Kbd, KbdGroup } from "@components/ui/kbd";
 import {
   Tooltip,
@@ -13,8 +15,8 @@ import {
 } from "@components/ui/popover";
 import { Toggle } from "@components/ui/toggle";
 import Image from "next/image";
-import Logo from "public/logo.svg";
-import { useEffect, useState } from "react";
+import LogoDark from "public/LogoDark.svg";
+import LogoLight from "public/LogoLight.svg";
 
 export default function StartMenuPopover({
   children,
@@ -22,6 +24,7 @@ export default function StartMenuPopover({
   children: React.ReactNode;
 }) {
   const [open, setOpen] = useState(false);
+  const { resolvedTheme } = useTheme();
 
   const handleKeyDown = (e: KeyboardEvent) => {
     if (e.shiftKey && e.key.toLowerCase() === "s") {
@@ -50,7 +53,12 @@ export default function StartMenuPopover({
               <Tooltip>
                 <TooltipTrigger asChild>
                   <span>
-                    <Image src={Logo} alt="Start Menu" width={16} height={16} />
+                    <Image
+                      src={resolvedTheme === "dark" ? LogoDark : LogoLight}
+                      alt="Start Menu"
+                      width={16}
+                      height={16}
+                    />
                   </span>
                 </TooltipTrigger>
                 <TooltipContent className="flex gap-2">
