@@ -20,7 +20,7 @@ export const contextMenuItems = {
     label: "Get System Info",
     icon: <Info />,
     function: () => {
-      openApp("settings");
+      openApp("settings", { defaultTab: "Info" });
     },
   },
 };

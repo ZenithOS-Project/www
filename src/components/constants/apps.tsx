@@ -1,3 +1,4 @@
+"use client";
 import { Calculator, Settings } from "lucide-react";
 import type { AppWindow } from "@/types";
 import CalculatorApp from "@apps/calculator";
@@ -8,20 +9,19 @@ export const Apps: AppWindow[] = [
     id: "settings",
     title: "Settings",
     icon: <Settings className="h-6 w-6" />,
-    content: <SettingsApp />,
+    component: SettingsApp,
     x: 2,
     y: 2,
-    w: 8,
+    w: 10,
     h: 8,
     active: false,
     showInTaskbar: false,
   },
-
   {
     id: "calculator",
     title: "Calculator",
     icon: <Calculator className="h-6 w-6" />,
-    content: <CalculatorApp />,
+    component: CalculatorApp,
     x: 0,
     y: 0,
     w: 7,

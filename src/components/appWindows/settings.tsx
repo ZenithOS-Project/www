@@ -1,11 +1,14 @@
+"use client";
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@components/ui/tabs";
 import { SettingsTabsAndContent } from "../constants/settings";
 
 export default function SettingsApp({
-  defaultTab = "general",
+  defaultTab = "System",
 }: {
   defaultTab?: string;
 }) {
+  console.log("Rendering SettingsApp with defaultTab:", defaultTab);
   return (
     <div className="h-full w-full">
       <Tabs
@@ -13,17 +16,26 @@ export default function SettingsApp({
         defaultValue={defaultTab}
       >
         <TabsList className="flex h-full w-fit flex-col justify-start">
-          {Object.entries(SettingsTabsAndContent).map(([key, { title }]) => (
-            <TabsTrigger className="max-h-8 w-32" key={key} value={key}>
-              {title}
-            </TabsTrigger>
-          ))}
+          {Object.entries(SettingsTabsAndContent).map(
+            ([key, { icon, title }]) => (
+              <TabsTrigger
+                className="max-h-8 w-32 justify-start hover:cursor-pointer"
+                key={key}
+                value={title}
+              >
+                {icon}
+                {title}
+              </TabsTrigger>
+            ),
+          )}
         </TabsList>
-        {Object.entries(SettingsTabsAndContent).map(([key, { content }]) => (
-          <TabsContent key={key} value={key}>
-            {content}
-          </TabsContent>
-        ))}
+        {Object.entries(SettingsTabsAndContent).map(
+          ([key, { title, content }]) => (
+            <TabsContent key={key} value={title}>
+              {content}
+            </TabsContent>
+          ),
+        )}
       </Tabs>
     </div>
   );
