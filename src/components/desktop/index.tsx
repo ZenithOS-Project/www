@@ -24,11 +24,24 @@ export default function AppGrid({ apps = [] }: AppGridProps) {
     createLayoutFromApps(apps),
   );
 
+  const [appInitialProps, setAppInitialProps] = useState<
+    Partial<Record<string, Record<string, any>>>
+  >({});
+
   useEffect(() => {
     const openAppHandler = (e: Event) => {
-      const ce = e as CustomEvent<string>;
-      if (ce?.detail) {
-        toggleApp(ce.detail);
+      const ce = e as CustomEvent<{
+        appId: string;
+        initialProps?: Record<string, any>;
+      }>;
+      if (ce?.detail?.appId) {
+        if (ce.detail.initialProps) {
+          setAppInitialProps((prev) => ({
+            ...prev,
+            [ce.detail.appId]: ce.detail.initialProps,
+          }));
+        }
+        toggleApp(ce.detail.appId);
       }
     };
 
@@ -175,6 +188,7 @@ export default function AppGrid({ apps = [] }: AppGridProps) {
                   isAnimating={isAnimating}
                   isClosing={isClosing}
                   startClosingApp={startClosingApp}
+                  initialProps={appInitialProps[app.id]}
                 />
               </div>
             );

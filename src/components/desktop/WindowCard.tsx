@@ -11,12 +11,14 @@ export default function WindowCard({
   isAnimating,
   isClosing,
   startClosingApp,
+  initialProps,
 }: {
   app: AppWindow;
   isOpening: boolean;
   isAnimating: boolean;
   isClosing: boolean;
   startClosingApp: (id: string) => void;
+  initialProps?: Record<string, any>;
 }) {
   return (
     <Card className="bg-card/80 h-full w-full overflow-hidden backdrop-blur-md">
@@ -41,7 +43,7 @@ export default function WindowCard({
         </div>
       </div>
       <div className="h-[calc(100%-2.5rem)] overflow-auto p-4">
-        {app.content}
+        {app.component ? <app.component {...initialProps} /> : app.content}
       </div>
     </Card>
   );
