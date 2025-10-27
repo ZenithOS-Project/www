@@ -140,7 +140,11 @@ export default function NotificationsContent({
                 variant="ghost"
                 size="sm"
                 onClick={() => {
-                  startTransition(() => markAllAction(new FormData()));
+                  startTransition(() => {
+                    const form = new FormData();
+                    form.append("userId", userId);
+                    markAllAction(form);
+                  });
                 }}
               >
                 <MailCheck />
