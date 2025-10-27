@@ -2,6 +2,11 @@ import { Providers } from "./providers";
 import "@styles/globals.css";
 import { sync } from "@/server/actions/user/sync";
 
+export const metadata = {
+  title: "| Zenith OS",
+  description: "A next-generation operating system for the web.",
+};
+
 export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
