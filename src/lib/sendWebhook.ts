@@ -1,5 +1,5 @@
 "use server";
-import supabase from "@server/supabase";
+import supabase from "@/server/supabase";
 
 export async function sendWebhook() {
   const { data, error } = await supabase

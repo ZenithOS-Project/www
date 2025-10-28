@@ -1,8 +1,8 @@
 "use client";
 
-import { Card } from "@components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Grip, X } from "lucide-react";
-import { Button } from "@components/ui/button";
+import { Button } from "@/components/ui/button";
 import type { AppWindow } from "@/types";
 
 export default function WindowCard({

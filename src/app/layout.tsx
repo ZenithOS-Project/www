@@ -1,6 +1,6 @@
 import { Providers } from "./providers";
-import "@styles/globals.css";
-import { sync } from "@/server/actions/user/sync";
+import "@/styles/globals.css";
+import { sync } from "@/actions/user/sync";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "@/app/api/uploadthing/core";

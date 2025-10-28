@@ -4,15 +4,15 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@components/ui/popover";
+} from "@/components/ui/popover";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@components/ui/tooltip";
-import { Toggle } from "@components/ui/toggle";
+} from "@/components/ui/tooltip";
+import { Toggle } from "@/components/ui/toggle";
 import { Bell } from "lucide-react";
-import { Kbd, KbdGroup } from "@components/ui/kbd";
+import { Kbd, KbdGroup } from "@/components/ui/kbd";
 
 export default function NotificationPopover({
   children,

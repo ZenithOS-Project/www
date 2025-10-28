@@ -1,6 +1,6 @@
 "use server";
 
-import supabase from "@server/supabase";
+import supabase from "@/server/supabase";
 import { withAuth } from "@workos-inc/authkit-nextjs";
 
 export async function sync() {

@@ -5,14 +5,14 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@components/ui/popover";
-import { Toggle } from "@components/ui/toggle";
+} from "@/components/ui/popover";
+import { Toggle } from "@/components/ui/toggle";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@components/ui/tooltip";
-import { Kbd, KbdGroup } from "@components/ui/kbd";
+} from "@/components/ui/tooltip";
+import { Kbd, KbdGroup } from "@/components/ui/kbd";
 
 export function DatePopover({
   trigger,

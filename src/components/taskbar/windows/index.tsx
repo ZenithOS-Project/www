@@ -3,9 +3,9 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@components/ui/tooltip";
-import { Toggle } from "@components/ui/toggle";
-import { useApps } from "@contexts/AppsContext";
+} from "@/components/ui/tooltip";
+import { Toggle } from "@/components/ui/toggle";
+import { useApps } from "@/contexts/AppsContext";
 
 export default function Windows() {
   const { apps, closingApps, startClosingApp } = useApps();

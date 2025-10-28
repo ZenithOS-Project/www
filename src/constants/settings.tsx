@@ -1,6 +1,6 @@
 import { Bell, Info, Lock, MonitorCog, User } from "lucide-react";
-import AccountSettings from "../settingsTabs/account";
-import SystemSettings from "../settingsTabs/system";
+import AccountSettings from "@/components/settingsTabs/account";
+import SystemSettings from "@/components/settingsTabs/system";
 
 export const SettingsTabsAndContent = {
   system: {

@@ -1,5 +1,5 @@
 "use server";
-import supabase from "@server/supabase";
+import supabase from "@/server/supabase";
 
 export async function getAllNotifications(userId: string) {
   const { data, error } = await supabase

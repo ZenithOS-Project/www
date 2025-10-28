@@ -1,5 +1,5 @@
 "use server";
-import supabase from "@server/supabase";
+import supabase from "@/server/supabase";
 import { revalidatePath } from "next/cache";
 
 export async function markNotificationAsRead(

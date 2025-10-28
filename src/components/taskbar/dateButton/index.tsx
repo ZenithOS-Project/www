@@ -1,7 +1,7 @@
 "use client";
 
-import { getDateString, getTimeString } from "@utils/getDate";
-import { Calendar } from "@components/ui/calendar";
+import { getDateString, getTimeString } from "@/utils/getDate";
+import { Calendar } from "@/components/ui/calendar";
 import { DatePopover } from "./DatePopover";
 import { useState, useEffect } from "react";
 

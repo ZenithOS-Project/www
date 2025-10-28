@@ -1,7 +1,7 @@
 "use client";
 
 import AppGrid from "@/components/desktop";
-import { useApps } from "@contexts/AppsContext";
+import { useApps } from "@/contexts/AppsContext";
 
 export default function AppContent() {
   const { apps } = useApps();

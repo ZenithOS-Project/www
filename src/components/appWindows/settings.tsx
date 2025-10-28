@@ -1,7 +1,7 @@
 "use client";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@components/ui/tabs";
-import { SettingsTabsAndContent } from "../constants/settings";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { SettingsTabsAndContent } from "@/constants/settings";
 
 export default function SettingsApp({
   defaultTab = "System",

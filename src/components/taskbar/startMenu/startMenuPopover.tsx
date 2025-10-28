@@ -2,18 +2,18 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { Kbd, KbdGroup } from "@components/ui/kbd";
+import { Kbd, KbdGroup } from "@/components/ui/kbd";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@components/ui/tooltip";
+} from "@/components/ui/tooltip";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@components/ui/popover";
-import { Toggle } from "@components/ui/toggle";
+} from "@/components/ui/popover";
+import { Toggle } from "@/components/ui/toggle";
 import Image from "next/image";
 import LogoDark from "public/LogoDark.svg";
 import LogoLight from "public/LogoLight.svg";

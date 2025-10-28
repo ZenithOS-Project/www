@@ -7,7 +7,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
-import { logout } from "@/server/actions/logout/logout";
+import { logout } from "@/actions/logout/logout";
 import {
   Tooltip,
   TooltipContent,
