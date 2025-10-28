@@ -1,20 +1,12 @@
 "use client";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/shadcn//avatar";
 import { useAuth } from "@workos-inc/authkit-nextjs/components";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { Button } from "@/components/ui/button";
+import { Popover, PopoverContent, PopoverTrigger } from "@/shadcn//popover";
+import { Button } from "@/shadcn//button";
 import { logout } from "@/actions/logout/logout";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/shadcn//tooltip";
 import { Settings, Power } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "@/shadcn//separator";
 import {
   AlertDialog,
   AlertDialogFooter,
@@ -23,7 +15,7 @@ import {
   AlertDialogHeader,
   AlertDialogTrigger,
   AlertDialogCancel,
-} from "@/components/ui/alert-dialog";
+} from "@/shadcn//alert-dialog";
 import { openApp } from "@/lib/openApp";
 
 export default function StartMenuPopoverContent() {

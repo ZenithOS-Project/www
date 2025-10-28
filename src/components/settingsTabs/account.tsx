@@ -1,5 +1,5 @@
 "use client";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/shadcn//avatar";
 import { UploadButton } from "@/utils/uploadthing";
 import { useQuery } from "@tanstack/react-query";
 import { Skeleton } from "../ui/skeleton";

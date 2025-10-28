@@ -1,6 +1,6 @@
 import { contextMenuItems } from "@/constants/contextMenu";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card } from "@/shadcn//card";
+import { Button } from "@/shadcn//button";
 
 export default function ContextMenu({ x, y }: { x: number; y: number }) {
   return (

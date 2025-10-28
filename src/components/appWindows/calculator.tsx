@@ -1,7 +1,7 @@
 "use client";
 
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Input } from "@/shadcn//input";
+import { Button } from "@/shadcn//button";
 import { useState } from "react";
 import { motion } from "motion/react";
 

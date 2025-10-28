@@ -1,10 +1,6 @@
 "use client";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { Toggle } from "@/components/ui/toggle";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/shadcn//tooltip";
+import { Toggle } from "@/shadcn//toggle";
 import { useApps } from "@/contexts/AppsContext";
 
 export default function Windows() {

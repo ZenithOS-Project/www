@@ -33,7 +33,7 @@
       "@/utils/*": ["./src/utils/*"],
       "@/lib/*": ["./src/lib/*"],
       "@/hooks/*": ["./src/hooks/*"],
-      "@/components/ui/*": ["./src/components/ui/*"],
+      "@/shadcn/*": ["./src/components/ui/*"],
       "@/server/*": ["./src/server/*"],
       "@/actions/*": ["./src/server/actions/*"],
       "@/fetchers/*": ["./src/server/fetchers/*"],
