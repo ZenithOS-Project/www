@@ -30,7 +30,7 @@ export default function WindowCard({
         </div>
         <div id="windowcontrols">
           <Button
-            variant="blank"
+            variant="ghost"
             onMouseDown={(e) => e.stopPropagation()}
             onClick={(e) => {
               e.stopPropagation();
