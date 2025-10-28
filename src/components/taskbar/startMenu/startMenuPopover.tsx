@@ -2,14 +2,14 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { Kbd, KbdGroup } from "@/shadcn//kbd";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/shadcn//tooltip";
-import { Popover, PopoverContent, PopoverTrigger } from "@/shadcn//popover";
-import { Toggle } from "@/shadcn//toggle";
+import { Kbd, KbdGroup } from "@/shadcn/kbd";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/shadcn/tooltip";
+import { Popover, PopoverContent, PopoverTrigger } from "@/shadcn/popover";
+import { Toggle } from "@/shadcn/toggle";
 import Image from "next/image";
 import LogoDark from "public/LogoDark.svg";
 import LogoLight from "public/LogoLight.svg";
-import { Skeleton } from "@/shadcn//skeleton";
+import { Skeleton } from "@/shadcn/skeleton";
 
 export default function StartMenuPopover({
   children,

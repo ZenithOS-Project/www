@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { Popover, PopoverContent, PopoverTrigger } from "@/shadcn//popover";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/shadcn//tooltip";
-import { Toggle } from "@/shadcn//toggle";
+import { Popover, PopoverContent, PopoverTrigger } from "@/shadcn/popover";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/shadcn/tooltip";
+import { Toggle } from "@/shadcn/toggle";
 import { Bell } from "lucide-react";
-import { Kbd, KbdGroup } from "@/shadcn//kbd";
+import { Kbd, KbdGroup } from "@/shadcn/kbd";
 
 export default function NotificationPopover({
   children,

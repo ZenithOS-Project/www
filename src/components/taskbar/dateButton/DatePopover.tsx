@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Popover, PopoverContent, PopoverTrigger } from "@/shadcn//popover";
-import { Toggle } from "@/shadcn//toggle";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/shadcn//tooltip";
-import { Kbd, KbdGroup } from "@/shadcn//kbd";
+import { Popover, PopoverContent, PopoverTrigger } from "@/shadcn/popover";
+import { Toggle } from "@/shadcn/toggle";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/shadcn/tooltip";
+import { Kbd, KbdGroup } from "@/shadcn/kbd";
 
 export function DatePopover({
   trigger,

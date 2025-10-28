@@ -1,6 +1,6 @@
 "use client";
 import EmptyNotifications from "./empty";
-import { ScrollArea } from "@/shadcn//scroll-area";
+import { ScrollArea } from "@/shadcn/scroll-area";
 import {
   BookOpenCheck,
   Info,
@@ -10,15 +10,15 @@ import {
   ShieldCheck,
   ShieldX,
 } from "lucide-react";
-import { Button } from "@/shadcn//button";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/shadcn//tooltip";
+import { Button } from "@/shadcn/button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/shadcn/tooltip";
 import { markNotificationAsRead } from "@/actions/notifications/markAsRead";
 import { useActionState, useEffect, useState, useTransition } from "react";
-import { Spinner } from "@/shadcn//spinner";
+import { Spinner } from "@/shadcn/spinner";
 import { toast } from "sonner";
 import { getAllNotifications } from "@/fetchers/notifications/getAllNotifications";
 import { markAllNotificationsAsRead } from "@/actions/notifications/markAllAsRead";
-import { Kbd, KbdGroup } from "@/shadcn//kbd";
+import { Kbd, KbdGroup } from "@/shadcn/kbd";
 import type { Notification } from "@/types";
 
 export default function NotificationsContent({

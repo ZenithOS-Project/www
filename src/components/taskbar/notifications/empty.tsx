@@ -5,7 +5,7 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/shadcn//empty";
+} from "@/shadcn/empty";
 import { Bell } from "lucide-react";
 
 export default function EmptyNotifications() {

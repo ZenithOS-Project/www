@@ -1,6 +1,6 @@
 "use client";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shadcn//tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shadcn/tabs";
 import { SettingsTabsAndContent } from "@/constants/settings";
 
 export default function SettingsApp({
