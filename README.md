@@ -15,6 +15,7 @@ This projects goal is to improve my personal skills in webdevelopment. Over the 
 - [ ] **Text Editor** - Simple note-taking and code editing with syntax highlighting
 - [x] **Clock/Calendar** - Display current time and calendar view
 - [ ] **System Tray** - Enhanced notifications, system status indicators, and quick settings
+- [ ] **Widget Center** - Put custom widgets in a popover style view.
 
 ### UI/UX Improvements
 
@@ -36,7 +37,7 @@ This projects goal is to improve my personal skills in webdevelopment. Over the 
 - [ ] **Paint/Drawing App** - Simple canvas-based drawing tool
 - [ ] **Terminal/Console** - Command-like interface for system commands
 - [ ] **Todo/Task Manager** - Create, organize, and track tasks
-- [ ] **Weather Widget** - Display weather information
+- [ ] **Weather App** - Display weather information
 - [ ] **Music Player** - Play audio files with visualization
 
 ### Performance & Optimization
