@@ -8,7 +8,6 @@ export default function SettingsApp({
 }: {
   defaultTab?: string;
 }) {
-  console.log("Rendering SettingsApp with defaultTab:", defaultTab);
   return (
     <div className="h-full w-full">
       <Tabs
