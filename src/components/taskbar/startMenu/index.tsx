@@ -1,4 +1,4 @@
-import { getUser } from "@/server/fetchers/user/getUser";
+import { getUser } from "@/fetchers/user/getUser";
 import StartMenuPopover from "./startMenuPopover";
 import StartMenuPopoverContent from "./startMenuPopoverContent";
 
