@@ -17,14 +17,9 @@ import {
   AlertDialogCancel,
 } from "@/shadcn/alert-dialog";
 import { openApp } from "@/lib/openApp";
+import type { User } from "@/types/user";
 
-export default function StartMenuPopoverContent() {
-  const { user } = useAuth();
-
-  if (!user) {
-    return <div>Not signed in</div>;
-  }
-
+export default function StartMenuPopoverContent({ user }: { user: User }) {
   return (
     <div className="flex flex-row">
       <div className="flex h-80 flex-col items-center justify-end gap-2 p-2">
@@ -76,8 +71,10 @@ export default function StartMenuPopoverContent() {
         <Popover>
           <PopoverTrigger>
             <Avatar className="w-full hover:cursor-pointer">
-              <AvatarImage src={user.profilePictureUrl ?? ""} />
-              <AvatarFallback>{user.firstName?.charAt(0)}</AvatarFallback>
+              <AvatarImage src={user ? user.avatar : ""} />
+              <AvatarFallback>
+                {user ? user.username?.charAt(0) : ""}
+              </AvatarFallback>
             </Avatar>
           </PopoverTrigger>
           <PopoverContent className="w-fit">

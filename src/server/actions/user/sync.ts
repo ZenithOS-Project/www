@@ -21,8 +21,7 @@ export async function sync() {
       .from("users")
       .update({
         email: user.email,
-        firstName: user.firstName,
-        lastName: user.lastName,
+        username: user.firstName,
         avatar: user.profilePictureUrl,
         updatedAt: new Date(),
         lastSeen: new Date(),
@@ -33,8 +32,7 @@ export async function sync() {
       {
         workOSId: user.id,
         email: user.email,
-        firstName: user.firstName,
-        lastName: user.lastName,
+        username: user.firstName,
         avatar: user.profilePictureUrl,
         createdAt: new Date(),
         updatedAt: new Date(),
