@@ -14,7 +14,7 @@ export default function SettingsApp({
         className="flex h-full w-full flex-row gap-4"
         defaultValue={defaultTab}
       >
-        <TabsList className="flex h-full w-fit flex-col justify-start">
+        <TabsList className="fixed flex h-full max-h-[84%] w-fit flex-col justify-start">
           {Object.entries(SettingsTabsAndContent).map(
             ([key, { icon, title }]) => (
               <TabsTrigger
@@ -30,7 +30,7 @@ export default function SettingsApp({
         </TabsList>
         {Object.entries(SettingsTabsAndContent).map(
           ([key, { title, content }]) => (
-            <TabsContent key={key} value={title}>
+            <TabsContent className="ml-38" key={key} value={title}>
               {content}
             </TabsContent>
           ),
