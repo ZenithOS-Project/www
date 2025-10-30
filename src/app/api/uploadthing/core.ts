@@ -36,7 +36,7 @@ export const ourFileRouter = {
       }
 
       //hard refresh the page to show the new avatar
-      location.reload();
+      // location.reload();
 
       return {
         uploadedBy: metadata.userId,

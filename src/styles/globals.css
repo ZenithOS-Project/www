@@ -233,3 +233,7 @@ body {
   border-color: var(--muted-foreground);
   border-radius: calc(var(--radius) / 2);
 }
+
+.upload-button-wrapper [data-state="uploading"]::after {
+  background-color: transparent !important;
+}

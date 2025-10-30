@@ -7,13 +7,16 @@ import { Separator } from "@/shadcn/separator";
 import { Input } from "@/shadcn/input";
 import { Label } from "@/shadcn/label";
 import { UploadButton } from "@/utils/uploadthing";
-import { PenLine, Check, X } from "lucide-react";
+import { PenLine, Check, X, Loader2 } from "lucide-react";
 import { Button } from "@/shadcn/button";
 import { useActionState, useState } from "react";
 import { updateUserField } from "@/actions/user/updateInformation";
 import { deleteAccount } from "@/actions/user/deleteAccount";
+import { useQueryClient } from "@tanstack/react-query";
+import { toast } from "sonner";
 
 export default function AccountSettings() {
+  const queryClient = useQueryClient();
   const {
     data: user,
     isError,
@@ -25,6 +28,8 @@ export default function AccountSettings() {
       return res.json();
     },
   });
+
+  const [isUploading, setIsUploading] = useState(false);
 
   const [editingField, setEditingField] = useState<string | null>(null);
   const [state, formAction, isPending] = useActionState(updateUserField, null);
@@ -137,9 +142,23 @@ export default function AccountSettings() {
             <AvatarImage src={user?.avatar} />
             <AvatarFallback>{user?.username[0]}</AvatarFallback>
           </Avatar>
-          <div className="absolute right-0 bottom-0">
+          <div className="upload-button-wrapper absolute right-0 bottom-0">
             <UploadButton
               endpoint="avatarUploader"
+              onUploadBegin={() => {
+                setIsUploading(true);
+              }}
+              onClientUploadComplete={async () => {
+                setIsUploading(false);
+                toast.success("Upload complete");
+                await queryClient.invalidateQueries({
+                  queryKey: ["user"],
+                });
+              }}
+              onUploadError={() => {
+                toast.error("Upload failed");
+                setIsUploading(false);
+              }}
               appearance={{
                 button: {
                   padding: "0",
@@ -162,13 +181,20 @@ export default function AccountSettings() {
                 },
               }}
               content={{
-                button({ ready }) {
+                button() {
                   return (
                     <div className="flex items-center justify-center">
-                      <PenLine
-                        size={14}
-                        className="text-secondary-foreground"
-                      />
+                      {isUploading ? (
+                        <Loader2
+                          size={14}
+                          className="text-secondary-foreground animate-spin"
+                        />
+                      ) : (
+                        <PenLine
+                          size={14}
+                          className="text-secondary-foreground"
+                        />
+                      )}
                     </div>
                   );
                 },
