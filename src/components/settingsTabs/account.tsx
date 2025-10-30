@@ -9,7 +9,7 @@ import { Label } from "@/shadcn/label";
 import { UploadButton } from "@/utils/uploadthing";
 import { PenLine, Check, X, Loader2 } from "lucide-react";
 import { Button } from "@/shadcn/button";
-import { useActionState, useState } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { updateUserField } from "@/actions/user/updateInformation";
 import { deleteAccount } from "@/actions/user/deleteAccount";
 import { useQueryClient } from "@tanstack/react-query";
@@ -33,6 +33,16 @@ export default function AccountSettings() {
 
   const [editingField, setEditingField] = useState<string | null>(null);
   const [state, formAction, isPending] = useActionState(updateUserField, null);
+
+  useEffect(() => {
+    if (state?.success) {
+      toast.success("Information updated successfully");
+      queryClient.invalidateQueries({
+        queryKey: ["user"],
+      });
+    }
+  }, [state]);
+
   const [deleteState, deleteAction, isDeleting] = useActionState(
     deleteAccount,
     null,
