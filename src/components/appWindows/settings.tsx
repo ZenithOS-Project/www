@@ -9,12 +9,12 @@ export default function SettingsApp({
   defaultTab?: string;
 }) {
   return (
-    <div className="h-full w-full">
+    <div className="relative h-full w-full overflow-hidden">
       <Tabs
         className="flex h-full w-full flex-row gap-4"
         defaultValue={defaultTab}
       >
-        <TabsList className="fixed flex h-full max-h-[84%] w-fit flex-col justify-start">
+        <TabsList className="absolute top-0 left-0 h-full w-fit flex-col justify-start overflow-y-auto">
           {Object.entries(SettingsTabsAndContent).map(
             ([key, { icon, title }]) => (
               <TabsTrigger
@@ -30,7 +30,11 @@ export default function SettingsApp({
         </TabsList>
         {Object.entries(SettingsTabsAndContent).map(
           ([key, { title, content }]) => (
-            <TabsContent className="ml-38" key={key} value={title}>
+            <TabsContent
+              className="ml-38 h-full overflow-y-auto"
+              key={key}
+              value={title}
+            >
               {content}
             </TabsContent>
           ),
