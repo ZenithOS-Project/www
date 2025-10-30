@@ -35,9 +35,6 @@ export const ourFileRouter = {
         throw new UploadThingError("Failed to update user avatar");
       }
 
-      //hard refresh the page to show the new avatar
-      // location.reload();
-
       return {
         uploadedBy: metadata.userId,
         fileUrl: file.ufsUrl,
