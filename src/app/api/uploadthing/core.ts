@@ -6,7 +6,7 @@ import { UploadThingError } from "uploadthing/server";
 const f = createUploadthing();
 
 export const ourFileRouter = {
-  imageUploader: f({
+  avatarUploader: f({
     image: {
       maxFileSize: "4MB",
       maxFileCount: 1,
@@ -20,10 +20,6 @@ export const ourFileRouter = {
       return { userId: user.id };
     })
     .onUploadComplete(async ({ metadata, file }) => {
-      console.log("Upload complete for userId:", metadata.userId);
-
-      console.log("file url", file.ufsUrl);
-
       const { data, error } = await supabase
         .from("users")
         .update({
@@ -40,7 +36,6 @@ export const ourFileRouter = {
       }
 
       //hard refresh the page to show the new avatar
-
       location.reload();
 
       return {
