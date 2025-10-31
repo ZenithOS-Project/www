@@ -1,8 +1,9 @@
 "use client";
-import { Calculator, Settings } from "lucide-react";
+import { Calculator, Cloud, Settings } from "lucide-react";
 import type { AppWindow } from "@/types";
 import CalculatorApp from "@/apps/calculator";
 import SettingsApp from "@/apps/settings";
+import WeatherApp from "@/apps/weather";
 
 export const Apps: AppWindow[] = [
   {
@@ -22,6 +23,18 @@ export const Apps: AppWindow[] = [
     title: "Calculator",
     icon: <Calculator className="h-6 w-6" />,
     component: CalculatorApp,
+    x: 0,
+    y: 0,
+    w: 7,
+    h: 7,
+    active: false,
+    showInTaskbar: true,
+  },
+  {
+    id: "weather",
+    title: "Weather",
+    icon: <Cloud className="h-6 w-6" />,
+    component: WeatherApp,
     x: 0,
     y: 0,
     w: 7,
