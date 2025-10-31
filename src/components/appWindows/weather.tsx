@@ -78,6 +78,14 @@ export default function WeatherApp() {
     (h: any) => h.time_epoch * 1000 > Date.now(),
   );
 
+  let displayHours = upcomingHours;
+
+  if (displayHours.length < 24 && forecast.length > 1) {
+    const tomorrowHours = forecast[1].hour;
+    const needed = 24 - displayHours.length;
+    displayHours = [...displayHours, ...tomorrowHours.slice(0, needed)];
+  }
+
   console.log(weather);
 
   return (
@@ -107,10 +115,10 @@ export default function WeatherApp() {
 
         <div className="overflow-x-auto pb-2">
           <div className="flex gap-3">
-            {upcomingHours.slice(0, 24).map((hour: any) => (
+            {displayHours.slice(0, 24).map((hour: any) => (
               <div
                 key={hour.time}
-                className="flex min-w-fit flex-col items-center"
+                className="mb-2 flex min-w-fit flex-col items-center"
               >
                 <span className="text-2xl">
                   {getWeatherIcon(hour.condition.code, hour.is_day)}
